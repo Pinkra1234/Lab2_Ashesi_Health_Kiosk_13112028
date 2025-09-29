@@ -81,18 +81,15 @@ public class HealthKiosk {
         System.out.println(" ");
         Random number = new Random();
         char letter = (char) ('A' + number.nextInt(26));
-        String code = " " + letter + (3 + (int) (Math.random() * 7)) + (3 + (int) (Math.random() * 7)) + (3 + (int) (Math.random() * 7)) + (3 + (int) (Math.random() * 7));
+        String code = "" + letter + (3 + (int) (Math.random() * 7)) + (3 + (int) (Math.random() * 7)) + (3 + (int) (Math.random() * 7)) + (3 + (int) (Math.random() * 7));
         System.out.println("Short code: " + code);
         if (code.length() == 5 && Character.isLetter(code.charAt(0)) && (Character.isDigit(code.charAt(1)) && Character.isDigit(code.charAt(2)) && Character.isDigit(code.charAt(3)) && Character.isDigit(code.charAt(4))) ){
             System.out.print("ID OK");
-        }
-        if (!(Character.isLetter(code.charAt(0)))) {
+        } else if (!(Character.isLetter(code.charAt(0)))) {
             System.out.println("Invalid code:first char must be a letter");
-        }
-        if (!(Character.isDigit(code.charAt(1)) && Character.isDigit(code.charAt(2)) && Character.isDigit(code.charAt(3)) && Character.isDigit(code.charAt(4)))) {
+        } else if (!(Character.isDigit(code.charAt(1)) && Character.isDigit(code.charAt(2)) && Character.isDigit(code.charAt(3)) && Character.isDigit(code.charAt(4)))) {
             System.out.println("Invalid: last 4 must be digits");
-        }
-        if (!(code.length() == 5)){
+        } else {
             System.out.println("Invalid length");
         }
 
@@ -105,6 +102,7 @@ public class HealthKiosk {
         String name = input.nextLine();
         char first = Character.toUpperCase(name.charAt(0));
         System.out.print("Base code = " + first);
+        System.out.println(" ");
         char shiftedLetter = (char) ('A' + (first - 'A' + 2) % 26);
         System.out.println("Shifted letter of the base = " + shiftedLetter);
         String lastTwo = code.substring(code.length() - 2);

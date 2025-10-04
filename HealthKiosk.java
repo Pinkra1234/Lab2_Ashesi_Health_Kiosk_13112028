@@ -114,17 +114,17 @@ public class HealthKiosk {
 
 //Task5
         String summary = "";
-        switch (summary) {
-            case "PHARMACY":
+        switch (serviceCode) {
+            case 'P':
                 System.out.println("Summary: PHARMACY | ID = " + code + "| Code = " + displayCode);
                 break;
-            case "TRIAGE":
+            case 'T':
                 System.out.println("Summary: TRIAGE | ID = " + code + "BMI = " + round + "| Code = " + displayCode);
                 break;
-            case "LABORATORY":
+            case 'L':
                 System.out.println("Summary: LABORATORY | ID = " + code + "| Code = " + displayCode);
                 break;
-            case "COUNSELING":
+            case 'C':
                 System.out.println("Summary: COUNSELING | ID = " + code + "| Code = " + displayCode);
                 break;
             default:
